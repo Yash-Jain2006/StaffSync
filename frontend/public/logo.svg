@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <!-- Primary Accent Gradient -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+
+    <!-- Secondary Accent Gradient -->
+    <linearGradient id="secondaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <!-- Drop Shadow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#38bdf8" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Emblem Container -->
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="1.8" filter="url(#glow)" />
+
+  <!-- Dynamic Synchronized People / Orbit S Monogram -->
+  <!-- Top Person Node -->
+  <circle cx="24" cy="13" r="3.2" fill="url(#primaryGrad)" />
+  
+  <!-- Top Sync Arch & Person Shoulder -->
+  <path d="M16 23c0-3.3 2.7-6 6-6h4c3.3 0 6 2.7 6 6v1a2 2 0 0 1-2 2h-1" 
+        stroke="url(#primaryGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Bottom Sync Arch & Reversible Arrow Flow -->
+  <path d="M32 25c0 3.3-2.7 6-6 6h-4c-3.3 0-6-2.7-6-6v-1a2 2 0 0 1 2-2h1" 
+        stroke="url(#secondaryGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Bottom Person Node -->
+  <circle cx="24" cy="35" r="3.2" fill="url(#secondaryGrad)" />
+
+  <!-- Center Connecting Sync Pulse -->
+  <circle cx="24" cy="24" r="2.2" fill="#38bdf8" />
+</svg>

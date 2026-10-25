@@ -1,0 +1,1323 @@
+/* StaffSync / HRM Portal — Global and Page Styles */
+
+:root {
+  --bg-dark: #0b1329;
+  --header-bg: #0c1427;
+  --card-bg: #131e36;
+  --card-inner-bg: #0f182c;
+  --input-bg: #192645;
+  --border-color: #1d2c4e;
+  --border-subtle: #1a2640;
+  --input-border: #263659;
+  
+  --primary-blue: #2563eb;
+  --primary-blue-hover: #1d4ed8;
+  --accent-blue: #38bdf8;
+  --logout-red: #e11d48;
+  --logout-red-hover: #be123c;
+  
+  --text-white: #ffffff;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-label: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================================
+   1. LANDING PAGE (Image 1)
+   ========================================================= */
+
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-dark);
+}
+
+.landing-header {
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: var(--header-bg);
+}
+
+.landing-header-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing-brand {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  letter-spacing: -0.3px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-blue);
+  color: var(--text-white);
+  padding: 0.6rem 1.35rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-blue-hover);
+}
+
+.btn-lg {
+  padding: 0.75rem 2rem;
+  font-size: 1.05rem;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--text-white);
+  padding: 0.6rem 1.35rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--input-bg);
+}
+
+.landing-main {
+  flex: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem 3rem;
+  width: 100%;
+}
+
+.landing-hero {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 5rem;
+}
+
+.hero-title {
+  font-size: 3.1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  color: var(--text-white);
+  letter-spacing: -0.5px;
+}
+
+.hero-highlight {
+  color: var(--primary-blue);
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 2.2rem 1.6rem;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  border-color: #2b3d68;
+}
+
+.feature-icon-wrap {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-blue { color: #38bdf8; }
+.icon-green { color: #22c55e; }
+.icon-yellow { color: #eab308; }
+.icon-pink { color: #ec4899; }
+
+.feature-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-white);
+}
+
+.feature-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.landing-footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* =========================================================
+   2. AUTHENTICATION PAGES (Login & Register — Images 2 & 3)
+   ========================================================= */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-dark);
+  padding: 1.5rem;
+}
+
+.auth-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 440px;
+  padding: 2.75rem 2.25rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+.auth-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.auth-back-link:hover {
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateX(-2px);
+}
+
+.auth-brand-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.auth-title {
+  font-size: 1.55rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.75rem;
+  color: var(--text-white);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.auth-field label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-label);
+}
+
+.auth-field input,
+.auth-field select,
+.auth-field textarea {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: var(--text-white);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.auth-field input::placeholder,
+.auth-field textarea::placeholder {
+  color: var(--text-dim);
+}
+
+.auth-field input:focus,
+.auth-field select:focus,
+.auth-field textarea:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+.btn-auth-submit {
+  width: 100%;
+  background-color: var(--primary-blue);
+  color: var(--text-white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-auth-submit:hover:not(:disabled) {
+  background-color: var(--primary-blue-hover);
+}
+
+.btn-auth-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.auth-footer-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.auth-link {
+  color: var(--accent-blue);
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   3. DASHBOARD & PORTAL LAYOUT (Image 4)
+   ========================================================= */
+
+.portal-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-dark);
+}
+
+.portal-header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.portal-header-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portal-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.btn-logout {
+  background-color: var(--logout-red);
+  color: var(--text-white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 1.4rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: var(--logout-red-hover);
+}
+
+.portal-subnav {
+  background-color: var(--bg-dark);
+}
+
+.portal-tabs-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem 0;
+}
+
+.portal-tabs {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.portal-tab {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1.35rem;
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px 8px 0 0;
+  transition: color 0.15s ease, background-color 0.15s ease;
+  font-family: inherit;
+}
+
+.portal-tab:hover {
+  color: var(--text-white);
+}
+
+.portal-tab.active {
+  background-color: #16223b;
+  color: var(--text-white);
+}
+
+.hr-tabs .portal-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0.55rem 1.25rem;
+  color: var(--text-muted);
+}
+
+.hr-tabs .portal-tab:hover {
+  color: var(--text-white);
+}
+
+.hr-tabs .portal-tab.active {
+  background-color: transparent;
+  border: 1px solid #cbd5e1;
+  color: var(--text-white);
+}
+
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--logout-red);
+  border-radius: 3px 3px 0 0;
+}
+
+.hr-tabs .portal-tab.active .tab-indicator {
+  left: 4px;
+  right: 4px;
+  height: 2.5px;
+  border-radius: 2px 2px 0 0;
+}
+
+.tabs-divider {
+  border-bottom: 1px solid var(--border-subtle);
+  width: 100%;
+}
+
+.portal-main {
+  flex: 1;
+  padding: 2rem 2.5rem 4rem;
+}
+
+.portal-content-wrap {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   4. PORTAL CARDS & EMPLOYEE OVERVIEW (Image 4)
+   ========================================================= */
+
+.employee-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+.portal-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.75rem;
+}
+
+.card-header-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 1.25rem;
+}
+
+.empty-muted-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.training-item-card {
+  background-color: var(--card-inner-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.35rem;
+}
+
+.training-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 0.35rem;
+}
+
+.training-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+}
+
+.training-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+/* Announcements List */
+.announcement-item {
+  background-color: var(--card-inner-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.1rem 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.announcement-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.4rem;
+}
+
+.announcement-head h4 {
+  font-size: 1.05rem;
+  color: var(--text-white);
+}
+
+.announcement-body {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* =========================================================
+   5. TABLES, FORMS & HELPERS
+   ========================================================= */
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--card-inner-bg);
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  text-align: left;
+}
+
+th, td {
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+th {
+  background-color: #16223b;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hr-table-wrap th {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  background-color: #21304f;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+td.wrap {
+  white-space: normal;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.badge.Pending {
+  background-color: rgba(234, 179, 8, 0.2);
+  color: #facc15;
+}
+
+.badge.Approved,
+.badge.Present {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.badge.Rejected,
+.badge.Absent {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.badge.Half-day {
+  background-color: rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+}
+
+/* Alerts */
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+}
+
+.alert.error {
+  background-color: rgba(225, 29, 72, 0.15);
+  border: 1px solid rgba(225, 29, 72, 0.4);
+  color: #fda4af;
+}
+
+.alert.ok {
+  background-color: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #86efac;
+}
+
+/* Profile Grid */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.profile-item label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.profile-val {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.stack > * + * {
+  margin-top: 1.5rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.spread {
+  justify-content: space-between;
+}
+
+.muted-text {
+  color: var(--text-muted);
+}
+
+.small-text {
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   6. EXACT COMPONENT STYLES (Images 1-5)
+   ========================================================= */
+
+/* Employee Portal: Leaves Tab */
+.leave-apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-top: 0.5rem;
+}
+
+.leave-dates-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.leave-dates-row input[type="date"] {
+  color-scheme: dark;
+}
+
+.btn-apply-leave {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  margin-top: 0.4rem;
+}
+
+.my-leaves-card {
+  margin-top: 1.75rem;
+}
+
+.leaves-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.leave-item-row {
+  background-color: var(--card-inner-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leave-dates {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 0.25rem;
+}
+
+.leave-reason {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.leave-status-pill {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.95rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.badge-approved {
+  background-color: #bbf7d0;
+  color: #15803d;
+}
+
+.badge-rejected {
+  background-color: #fecaca;
+  color: #dc2626;
+}
+
+.badge-pending {
+  background-color: #fef08a;
+  color: #854d0e;
+}
+
+/* Employee Portal: Attendance Tab */
+.attendance-card {
+  padding: 2rem;
+}
+
+.attendance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.btn-attendance-status {
+  background-color: #064e3b;
+  color: #34d399;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.45rem 1.35rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-attendance-status:disabled {
+  cursor: default;
+}
+
+.attendance-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.attendance-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.attendance-item-row:last-child {
+  border-bottom: none;
+}
+
+.attendance-item-date {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 0.3rem;
+}
+
+.attendance-item-times {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.attendance-status-pill {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.95rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.badge-present {
+  background-color: #bbf7d0;
+  color: #15803d;
+}
+
+/* Employee Portal: Profile Tab */
+.profile-card-wrap {
+  padding: 2rem;
+}
+
+.my-profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+.profile-line {
+  font-size: 1.08rem;
+  color: var(--text-white);
+}
+
+.profile-line strong {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+/* Manager Dashboard (Image 5) */
+.manager-dashboard-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2.75rem 2.25rem;
+}
+
+.manager-welcome-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 1.75rem;
+}
+
+.manager-tabs-control {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 2.5rem;
+  background-color: #0f182c;
+  border: 1px solid #1a2744;
+  border-radius: 8px;
+  padding: 4px;
+  width: fit-content;
+  gap: 4px;
+}
+
+.manager-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.5rem 1.35rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-family: inherit;
+}
+
+.manager-toggle-btn:hover {
+  color: var(--text-white);
+}
+
+.manager-toggle-btn.active {
+  background-color: var(--primary-blue);
+  color: var(--text-white);
+}
+
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 1.5rem;
+}
+
+.manager-leave-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.manager-leave-card {
+  background-color: #16223b;
+  border: 1px solid #233456;
+  border-radius: 12px;
+  padding: 1.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.card-line {
+  color: #cbd5e1;
+}
+
+.card-line strong {
+  color: var(--text-white);
+  font-weight: 700;
+  margin-right: 0.35rem;
+}
+
+.card-line-sub {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-bottom: 0.4rem;
+}
+
+.color-green {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.color-red {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.color-yellow {
+  color: #facc15;
+  font-weight: 700;
+}
+
+.reviewer-tag {
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .manager-leave-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .manager-leave-grid {
+    grid-template-columns: 1fr;
+  }
+  .leave-dates-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   7. HR DASHBOARD & MANAGER TRAINING STYLES (Images 1-5)
+   ========================================================= */
+
+.hr-dashboard-heading {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 1.5rem;
+}
+
+.btn-action-approve {
+  background-color: #ffffff;
+  color: #16a34a;
+  border: 1px solid #16a34a;
+  border-radius: 6px;
+  padding: 0.35rem 0.95rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-action-approve:hover {
+  background-color: #f0fdf4;
+}
+
+.btn-action-reject {
+  background-color: #ffffff;
+  color: #dc2626;
+  border: 1px solid #dc2626;
+  border-radius: 6px;
+  padding: 0.35rem 0.95rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-action-reject:hover {
+  background-color: #fef2f2;
+}
+
+.btn-action-edit {
+  background-color: #ffffff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+  border-radius: 6px;
+  padding: 0.35rem 0.95rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-action-edit:hover {
+  background-color: #eff6ff;
+}
+
+.btn-action-delete {
+  background-color: #ffffff;
+  color: #dc2626;
+  border: 1px solid #dc2626;
+  border-radius: 6px;
+  padding: 0.35rem 0.95rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-action-delete:hover {
+  background-color: #fef2f2;
+}
+
+/* HR Employee Form */
+.hr-employee-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-top: 1rem;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.hr-employee-form input,
+.hr-announcement-form input,
+.hr-announcement-form textarea,
+.manager-training-form input,
+.manager-training-form textarea {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: var(--text-white);
+  font-size: 0.95rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.hr-employee-form input::placeholder,
+.hr-announcement-form input::placeholder,
+.hr-announcement-form textarea::placeholder,
+.manager-training-form input::placeholder,
+.manager-training-form textarea::placeholder {
+  color: var(--text-dim);
+}
+
+.btn-add-employee {
+  width: 100%;
+  background-color: var(--logout-red);
+  color: var(--text-white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-add-employee:hover:not(:disabled) {
+  background-color: var(--logout-red-hover);
+}
+
+/* HR Announcements Form */
+.hr-announcement-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.announcement-actions-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.select-audience {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-white);
+  border-radius: 6px;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.95rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.btn-create-announcement {
+  background-color: var(--logout-red);
+  color: var(--text-white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.6rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-create-announcement:hover:not(:disabled) {
+  background-color: var(--logout-red-hover);
+}
+
+/* Manager Training & Development (Image 5) */
+.manager-toggle-btn.active.active-green {
+  background-color: #16a34a !important;
+  color: var(--text-white);
+}
+
+.manager-training-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.btn-create-training {
+  width: 100%;
+  background-color: var(--primary-blue);
+  color: var(--text-white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-create-training:hover:not(:disabled) {
+  background-color: var(--primary-blue-hover);
+}
+
+.manager-training-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.6rem;
+  max-width: 440px;
+}
+
+.training-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 0.4rem;
+}
+
+.training-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+}
+
+.training-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+  color: #cbd5e1;
+}
+
+.training-card-meta strong {
+  color: var(--text-white);
+  font-weight: 700;
+  margin-right: 0.35rem;
+}
+
+.btn-action-edit-amber {
+  background-color: #eab308;
+  color: var(--text-white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-action-edit-amber:hover {
+  opacity: 0.9;
+}
+
+.btn-action-delete-red {
+  background-color: #dc2626;
+  color: var(--text-white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-action-delete-red:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .form-row-3 {
+    grid-template-columns: 1fr;
+  }
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
